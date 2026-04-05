@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 52" fill="none" role="img" aria-label="4D Investing — Mark and Wordmark">
+  <title>4D Investing</title>
+  <defs>
+    <style type="text/css">
+      <![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=JetBrains+Mono:wght@400&display=swap');
+      ]]>
+    </style>
+  </defs>
+
+  <!-- ── Mark: Quadrant circle ───────────────────────────── -->
+
+  <!-- Gold pie slice: top-right quadrant -->
+  <!-- Arc: from top (26,7) clockwise to right (45,26) -->
+  <path d="M 26,26 L 26,7 A 19,19 0 0,1 45,26 Z" fill="#C9A84C"/>
+
+  <!-- Circle outline -->
+  <circle cx="26" cy="26" r="19" stroke="currentColor" stroke-width="1.2"/>
+
+  <!-- Crosshair — horizontal -->
+  <line x1="7" y1="26" x2="45" y2="26" stroke="currentColor" stroke-width="0.75" opacity="0.35"/>
+
+  <!-- Crosshair — vertical -->
+  <line x1="26" y1="7" x2="26" y2="45" stroke="currentColor" stroke-width="0.75" opacity="0.35"/>
+
+  <!-- Center pivot dot -->
+  <circle cx="26" cy="26" r="1.75" fill="currentColor"/>
+
+  <!-- ── Separator ─────────────────────────────────────────── -->
+  <line x1="61" y1="13" x2="61" y2="39" stroke="currentColor" stroke-width="0.8" opacity="0.2"/>
+
+  <!-- ── Wordmark ──────────────────────────────────────────── -->
+
+  <!-- "4D" — display serif -->
+  <text
+    x="73" y="31"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="24"
+    font-weight="700"
+    letter-spacing="-0.01em"
+    fill="currentColor">4D</text>
+
+  <!-- "INVESTING" — monospace, tracked -->
+  <text
+    x="74" y="46"
+    font-family="'JetBrains Mono', 'Lucida Console', 'Courier New', monospace"
+    font-size="7.5"
+    font-weight="400"
+    letter-spacing="0.44em"
+    fill="currentColor"
+    opacity="0.55">INVESTING</text>
+
+</svg>

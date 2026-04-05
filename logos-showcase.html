@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Logo Showcase — 4D Investing</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700;1,900&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:     #0D0D0D;
+      --bg-2:   #111111;
+      --border: #222222;
+      --gold:   #C9A84C;
+      --text:   #E8E2D5;
+      --dim:    #4A4540;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 0.75rem;
+      -webkit-font-smoothing: antialiased;
+      padding: 3rem 2rem 5rem;
+    }
+
+    header {
+      max-width: 960px;
+      margin: 0 auto 3.5rem;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 1.5rem;
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.375rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.01em;
+    }
+
+    header p {
+      font-size: 0.6875rem;
+      color: var(--dim);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    /* ── Grid ─────────────────────────────────────────── */
+    .showcase {
+      max-width: 960px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 4rem;
+    }
+
+    .logo-section {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .section-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .section-label::after {
+      content: '';
+      display: block;
+      height: 1px;
+      width: 2rem;
+      background: var(--gold);
+      opacity: 0.5;
+    }
+
+    .section-name {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── Panels ───────────────────────────────────────── */
+    .panels {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .panel {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .panel-label {
+      font-size: 0.5875rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--dim);
+    }
+
+    .panel-stage {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 160px;
+      border: 1px solid var(--border);
+      padding: 2rem;
+      position: relative;
+    }
+
+    /* Dark stage */
+    .panel-stage.dark {
+      background: #0D0D0D;
+      color: #E8E2D5;
+    }
+
+    /* Light stage */
+    .panel-stage.light {
+      background: #F5F0E8;
+      color: #0D0D0D;
+      border-color: #DDD7CC;
+    }
+
+    /* Background label */
+    .panel-stage::after {
+      content: attr(data-bg);
+      position: absolute;
+      top: 0.5rem;
+      right: 0.625rem;
+      font-size: 0.5rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      opacity: 0.35;
+    }
+
+    .panel-stage.dark::after  { color: #E8E2D5; }
+    .panel-stage.light::after { color: #0D0D0D; }
+
+    /* ── SVG sizing ───────────────────────────────────── */
+    .panel-stage svg {
+      max-width: 100%;
+      height: auto;
+      max-height: 80px;
+    }
+
+    /* ── Divider ──────────────────────────────────────── */
+    .divider {
+      width: 100%;
+      height: 1px;
+      background: var(--border);
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    /* ── Notes ────────────────────────────────────────── */
+    .notes {
+      max-width: 960px;
+      margin: 4rem auto 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      border-top: 1px solid var(--border);
+      padding-top: 2rem;
+    }
+
+    .note-block h3 {
+      font-size: 0.625rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .note-block p {
+      font-size: 0.6875rem;
+      color: var(--dim);
+      letter-spacing: 0.04em;
+      line-height: 1.8;
+    }
+
+    @media (max-width: 600px) {
+      .panels { grid-template-columns: 1fr; }
+      .notes  { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <h1>Logo Showcase</h1>
+      <p style="margin-top:0.375rem;">4D Investing · Srinivasan Alagu · Brand Review</p>
+    </div>
+    <p>Colors: #0D0D0D · #C9A84C · #E8E2D5</p>
+  </header>
+
+  <div class="showcase">
+
+    <!-- ══════════════════════════════════════════════════
+         LOGO 1
+    ══════════════════════════════════════════════════ -->
+    <div class="logo-section">
+      <div class="section-label">01</div>
+      <div class="section-name">Mark + Wordmark — Quadrant Circle</div>
+
+      <div class="panels">
+
+        <div class="panel">
+          <div class="panel-label">On dark background</div>
+          <div class="panel-stage dark" data-bg="Dark #0D0D0D">
+            <!-- Logo V1 inlined for font inheritance -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 52" fill="none" role="img" aria-label="4D Investing">
+              <path d="M 26,26 L 26,7 A 19,19 0 0,1 45,26 Z" fill="#C9A84C"/>
+              <circle cx="26" cy="26" r="19" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="7" y1="26" x2="45" y2="26" stroke="currentColor" stroke-width="0.75" opacity="0.35"/>
+              <line x1="26" y1="7" x2="26" y2="45" stroke="currentColor" stroke-width="0.75" opacity="0.35"/>
+              <circle cx="26" cy="26" r="1.75" fill="currentColor"/>
+              <line x1="61" y1="13" x2="61" y2="39" stroke="currentColor" stroke-width="0.8" opacity="0.2"/>
+              <text x="73" y="31"
+                font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+                font-size="24" font-weight="700" letter-spacing="-0.01em"
+                fill="currentColor">4D</text>
+              <text x="74" y="46"
+                font-family="'JetBrains Mono', 'Lucida Console', 'Courier New', monospace"
+                font-size="7.5" font-weight="400" letter-spacing="0.44em"
+                fill="currentColor" opacity="0.55">INVESTING</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-label">On light background</div>
+          <div class="panel-stage light" data-bg="Light #F5F0E8">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224 52" fill="none" role="img" aria-label="4D Investing">
+              <path d="M 26,26 L 26,7 A 19,19 0 0,1 45,26 Z" fill="#C9A84C"/>
+              <circle cx="26" cy="26" r="19" stroke="currentColor" stroke-width="1.2"/>
+              <line x1="7" y1="26" x2="45" y2="26" stroke="currentColor" stroke-width="0.75" opacity="0.35"/>
+              <line x1="26" y1="7" x2="26" y2="45" stroke="currentColor" stroke-width="0.75" opacity="0.35"/>
+              <circle cx="26" cy="26" r="1.75" fill="currentColor"/>
+              <line x1="61" y1="13" x2="61" y2="39" stroke="currentColor" stroke-width="0.8" opacity="0.2"/>
+              <text x="73" y="31"
+                font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+                font-size="24" font-weight="700" letter-spacing="-0.01em"
+                fill="currentColor">4D</text>
+              <text x="74" y="46"
+                font-family="'JetBrains Mono', 'Lucida Console', 'Courier New', monospace"
+                font-size="7.5" font-weight="400" letter-spacing="0.44em"
+                fill="currentColor" opacity="0.55">INVESTING</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- ══════════════════════════════════════════════════
+         LOGO 2
+    ══════════════════════════════════════════════════ -->
+    <div class="logo-section">
+      <div class="section-label">02</div>
+      <div class="section-name">Typographic — Split Serif Italic</div>
+
+      <div class="panels">
+
+        <div class="panel">
+          <div class="panel-label">On dark background</div>
+          <div class="panel-stage dark" data-bg="Dark #0D0D0D">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 72" fill="none" role="img" aria-label="4D Investing">
+              <text x="4" y="54"
+                font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+                font-size="60" font-weight="900" font-style="italic">
+                <tspan fill="#C9A84C">4</tspan><tspan fill="currentColor">D</tspan>
+              </text>
+              <line x1="4" y1="60" x2="206" y2="60" stroke="#C9A84C" stroke-width="1.2" opacity="0.6"/>
+              <text x="5" y="70"
+                font-family="'JetBrains Mono', 'Lucida Console', 'Courier New', monospace"
+                font-size="9" font-weight="400" letter-spacing="0.58em"
+                fill="currentColor" opacity="0.6">INVESTING</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="panel-label">On light background</div>
+          <div class="panel-stage light" data-bg="Light #F5F0E8">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 72" fill="none" role="img" aria-label="4D Investing">
+              <text x="4" y="54"
+                font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+                font-size="60" font-weight="900" font-style="italic">
+                <tspan fill="#C9A84C">4</tspan><tspan fill="currentColor">D</tspan>
+              </text>
+              <line x1="4" y1="60" x2="206" y2="60" stroke="#C9A84C" stroke-width="1.2" opacity="0.6"/>
+              <text x="5" y="70"
+                font-family="'JetBrains Mono', 'Lucida Console', 'Courier New', monospace"
+                font-size="9" font-weight="400" letter-spacing="0.58em"
+                fill="currentColor" opacity="0.6">INVESTING</text>
+            </svg>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div><!-- /showcase -->
+
+
+  <!-- ══════════════════════════════════════════════════
+       DESIGN NOTES
+  ══════════════════════════════════════════════════ -->
+  <div class="notes">
+
+    <div class="note-block">
+      <h3>Logo 1 — Mark + Wordmark</h3>
+      <p>
+        The circle divided into 4 quadrants references the 4D framework directly.
+        The gold top-right quadrant represents "the edge" — the advantage that systematic
+        thinking gives. The crosshairs suggest precision and a framework lens.
+        Scales down to 24×24px as a favicon or social avatar.
+      </p>
+    </div>
+
+    <div class="note-block">
+      <h3>Logo 2 — Typographic</h3>
+      <p>
+        The italic Playfair Display creates forward momentum — appropriate for a
+        systematic investor who learns by moving. The "4" in gold and "D" in
+        currentColor create a two-tone mark without an icon. The gold rule
+        and tracked mono "INVESTING" below provide structural contrast.
+        Works best at medium-to-large sizes.
+      </p>
+    </div>
+
+  </div>
+
+</body>
+</html>

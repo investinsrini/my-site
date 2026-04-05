@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 72" fill="none" role="img" aria-label="4D Investing — Typographic Logo">
+  <title>4D Investing</title>
+  <defs>
+    <style type="text/css">
+      <![CDATA[
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700;1,900&family=JetBrains+Mono:wght@400&display=swap');
+      ]]>
+    </style>
+  </defs>
+
+  <!-- ── "4D" display mark ─────────────────────────────────── -->
+  <!-- "4" in gold — the edge -->
+  <text
+    x="4" y="54"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="60"
+    font-weight="900"
+    font-style="italic"
+    fill="#C9A84C"><tspan>4</tspan></text>
+
+  <!-- "D" in currentColor — the discipline -->
+  <text
+    x="41" y="54"
+    font-family="'Playfair Display', Georgia, 'Times New Roman', serif"
+    font-size="60"
+    font-weight="900"
+    font-style="italic"
+    fill="currentColor"><tspan>D</tspan></text>
+
+  <!-- ── Gold rule ──────────────────────────────────────────── -->
+  <line x1="4" y1="60" x2="206" y2="60" stroke="#C9A84C" stroke-width="1.2" opacity="0.6"/>
+
+  <!-- ── "INVESTING" — monospace, tracked to rule width ────── -->
+  <text
+    x="5" y="70"
+    font-family="'JetBrains Mono', 'Lucida Console', 'Courier New', monospace"
+    font-size="9"
+    font-weight="400"
+    letter-spacing="0.58em"
+    fill="currentColor"
+    opacity="0.6">INVESTING</text>
+
+</svg>
